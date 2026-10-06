@@ -1,0 +1,459 @@
+/* ===================================================================
+   LUMINA LUXE DESIGN SYSTEM - HAUTE COIFFURE & SPA ENTERPRISE
+   =================================================================== */
+
+:root, [data-theme='light'], body[data-theme='light'], .theme-light {
+  /* Bright Luxury Haute Gold & Pearl Theme (Default) */
+  --bg-main: #f5f3ee;
+  --bg-sidebar: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #faf8f5;
+  --bg-elevated: #ece8dd;
+  --bg-input: #f8f6f1;
+
+  --gold-primary: #a87913;
+  --gold-light: #d4af37;
+  --gold-dark: #7a570c;
+  --gold-gradient: linear-gradient(135deg, #d4af37 0%, #a87913 100%);
+  --gold-glow: 0 4px 18px rgba(168, 121, 19, 0.2);
+  --gold-subtle: rgba(168, 121, 19, 0.1);
+
+  --rose-accent: #e11d48;
+  --rose-gradient: linear-gradient(135deg, #fb7185 0%, #e11d48 100%);
+  --emerald-accent: #059669;
+  --ruby-accent: #dc2626;
+  --amber-accent: #d97706;
+  --cyan-accent: #0284c7;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-gold: #92670a;
+
+  --border-subtle: rgba(0, 0, 0, 0.09);
+  --border-gold: rgba(168, 121, 19, 0.35);
+  --border-card: rgba(0, 0, 0, 0.08);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-gold: 0 8px 30px rgba(168, 121, 19, 0.12);
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --glass-border: 1px solid rgba(168, 121, 19, 0.25);
+  --glass-blur: blur(16px);
+  color-scheme: light;
+}
+
+[data-theme='dark'], body[data-theme='dark'], .theme-dark {
+  /* Dark Luxury Royal Blue & Sapphire Theme */
+  --bg-main: #070c18;
+  --bg-sidebar: #0b1224;
+  --bg-card: #0f1932;
+  --bg-card-hover: #152244;
+  --bg-elevated: #162446;
+  --bg-input: #0a1122;
+  
+  --gold-primary: #38bdf8;
+  --gold-light: #7dd3fc;
+  --gold-dark: #0284c7;
+  --gold-gradient: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 50%, #0284c7 100%);
+  --gold-glow: 0 4px 20px rgba(56, 189, 248, 0.28);
+  --gold-subtle: rgba(56, 189, 248, 0.12);
+
+  --rose-accent: #f43f5e;
+  --rose-gradient: linear-gradient(135deg, #fda4af 0%, #f43f5e 100%);
+  --emerald-accent: #10b981;
+  --ruby-accent: #ef4444;
+  --amber-accent: #f59e0b;
+  --cyan-accent: #38bdf8;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #60728d;
+  --text-gold: #7dd3fc;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(56, 189, 248, 0.30);
+  --border-card: rgba(255, 255, 255, 0.085);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.40);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.50);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.70);
+  --shadow-gold: 0 8px 30px rgba(56, 189, 248, 0.18);
+
+  --glass-bg: rgba(15, 25, 50, 0.82);
+  --glass-border: 1px solid rgba(56, 189, 248, 0.20);
+  --glass-blur: blur(16px);
+  color-scheme: dark;
+}
+
+[data-theme='light'] .modal-overlay {
+  background: rgba(15, 23, 42, 0.55);
+}
+
+[data-theme='light'] .luxe-table th {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme='light'] .luxe-table tr:hover td {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.28);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
+
+/* Typography Helpers */
+h1, h2, h3, .serif-heading {
+  font-family: var(--font-serif);
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+.gold-text-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 22px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.22s ease-in-out;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #040a17;
+  box-shadow: var(--gold-glow);
+  font-weight: 700;
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.40);
+}
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-gold);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold-primary);
+  border: 1px solid var(--gold-primary);
+}
+.btn-outline-gold:hover {
+  background: var(--gold-subtle);
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background: rgba(244, 63, 94, 0.12);
+  color: #f43f5e;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+.btn-danger:hover {
+  background: #f43f5e;
+  color: white;
+}
+
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+}
+
+/* Luxury Cards */
+.luxe-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.luxe-card:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.luxe-card-glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: var(--radius-md);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-full);
+}
+
+.badge-gold {
+  background: rgba(56, 189, 248, 0.14);
+  color: var(--gold-primary);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--emerald-accent);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-ruby {
+  background: rgba(244, 63, 94, 0.15);
+  color: var(--ruby-accent);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--amber-accent);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-cyan {
+  background: rgba(6, 182, 212, 0.15);
+  color: var(--cyan-accent);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.badge-gray {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 16px;
+}
+.form-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.form-input, .form-select, .form-textarea, .form-control {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.86rem;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus, .form-control:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22);
+  background: var(--bg-card-hover);
+}
+
+.form-select, select.form-control {
+  cursor: pointer;
+}
+
+.form-select option, select.form-control option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+/* Hide Number Input Up/Down Arrows / Spinners */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+/* Tables */
+.luxe-table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-card);
+  background: var(--bg-card);
+}
+.luxe-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+.luxe-table th {
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-secondary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+.luxe-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+.luxe-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 5, 8, 0.82);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  max-width: 650px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 576px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+  .modal-content {
+    border-radius: var(--radius-md);
+    max-height: 95vh;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Print Invoice Styling */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .printable-receipt, .printable-receipt * {
+    visibility: visible;
+  }
+  .printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: black !important;
+    background: white !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
